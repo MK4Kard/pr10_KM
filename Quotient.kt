@@ -10,9 +10,16 @@ open class Quotient(_name: String): Enterprise(_name) {
         q = acVolume/plVolume
     }
     override fun Info(){
-        println("Предприятие - ${name}\n" +
-                "Плановый объем розничного товарооборота: ${plVolume}\n" +
-                "Фактический объем розничного товарооборота: ${acVolume}\n" +
-                "Качество предприятия: ${String.format("%.2f", q)}")
+        if (acVolume >= 1 || plVolume >= 1) {
+            println(
+                "Предприятие - ${name}\n" +
+                        "Плановый объем розничного товарооборота: ${plVolume}\n" +
+                        "Фактический объем розничного товарооборота: ${acVolume}\n" +
+                        "Качество предприятия: ${String.format("%.2f", q)}"
+            )
+        }
+        else {
+            println("неверные данные")
+        }
     }
 }
