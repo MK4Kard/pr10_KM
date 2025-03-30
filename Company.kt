@@ -1,6 +1,14 @@
 class Company(val name: String, val _reg: Boolean, val _year: Int,
               val _month: Int, val _day: Int) : InF {
     var info: String = ""
+    fun Info(){
+        if (info != "") {
+            println(
+                "Компания ${name}\n" +
+                        "Дата регистрации: ${info}"
+            )
+        }
+    }
     override val reg = _reg
     override val year = _year
     override val month = _month
@@ -63,7 +71,7 @@ class Company(val name: String, val _reg: Boolean, val _year: Int,
             }
         }
         else {
-            return println("Данная организация не зарегистрирована")
+            return println("Данная компания не зарегистрирована")
         }
     }
 }
